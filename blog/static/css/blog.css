@@ -8,3 +8,6 @@
 #main{
     margin-top: 20px ;
 }
+.tag .btn .btn-outline-info{
+    padding: 2rem 2rem !important;
+}
