@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p class="date small font-italic">
+        Published {{ post.publish }} by {{ post.author }}
+    </p>
+    {{ post.body|linebreaks }}
+    <p>
+        <a href="{% url "blog:post_share" post.id %}" class="btn btn-outline-info">
+            Share post
+        </a>
+    </p>
+    <hr>
+    {% with comments.count as total_comments %}
+        <h2>
+            {{ total_comments }} comment{{ total_comments|pluralize }}
+        </h2>
+    {% endwith %}
+    {% for comment in comments %}
+        <div class="card card-block">
+            <p class="card-title h4">
+                {{ comment.name }}
+            <div class="small font-italic">{{ comment.created }}</div>
+            </p>
+            <div class="card-text">
+                {{ comment.body|linebreaks }}
+            </div>
+        </div>
+    {% empty %}
+        <p>There are no comments yet.</p>
+    {% endfor %}
+    {% if new_comment %}
+        <h2>Your comment has been added.</h2>
+    {% else %}
+        <h2>Add a new comment</h2>
+        <form action="." method="post">
+            {% csrf_token %}
+            {% for  field in  comment_form %}
+                {% if field.errors %}
+                <div class=" form-group alert alert-danger alert-dismissable">
+                    {{ field.errors }}
+                </div>
+                {% endif %}
+                <div class="form-group">
+                {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+            <p><input type="submit" value="Add comment" class="btn btn-outline-info"></p>
+        </form>
+    {% endif %}
+{% endblock %}
