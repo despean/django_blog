@@ -18,3 +18,12 @@ class CommentForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'})
         }
         fields = ('name', 'email', 'body')
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'class': 'w-50 form-control'
+            }
+        ))

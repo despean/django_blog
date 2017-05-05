@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
-SITE_ID  = 1
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'taggit',
+    'haystack',
     'django.contrib.sites',
     'django.contrib.sitemaps',
 ]
@@ -125,3 +126,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "blog/static"),
 ]
+
+# search Engine Backend config
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/blog'
+    },
+}

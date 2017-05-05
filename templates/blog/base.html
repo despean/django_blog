@@ -23,6 +23,7 @@
 
         <h2>My blog</h2>
         <p>This is my blog. I've written {% total_posts %} posts so far.</p>
+        <br>
         <div class="">
             <h4><a href="{% url 'blog:post_list' %}" class="list-group-item bg-info text-center, text-white">All
                 Posts</a></h4>
@@ -42,8 +43,10 @@
             {% endfor %}
         </ul>
         <br>
-       <span class="badge badge-info"><a href="{% url 'blog:post_feed' %}" class="text-white nav-link">RSS</a></span>
-    <span class="badge badge-info "><a href="{% url 'django.contrib.sitemaps.views.sitemap' %}" class="text-white nav-link">Sitemap</a></span>
+        <span class="badge badge-info"><a href="{% url 'blog:post_feed' %}"
+                                          class="text-white nav-link">RSS</a></span>
+        <span class="badge badge-info "><a href="{% url 'django.contrib.sitemaps.views.sitemap' %}"
+                                           class="text-white nav-link">Sitemap</a></span>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
