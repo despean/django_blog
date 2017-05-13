@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'sblog.wsgi.application'
 
 DATABASES = {
   'default': {
-    'ENGINE': 'django.db.backends.postgresql',
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'HOST': 'ec2-54-247-99-159.eu-west-1.compute.amazonaws.com',
     'USER': 'oksxiwjzjigevj',
     'PORT': '5432',
