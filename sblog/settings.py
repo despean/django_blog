@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'sblog.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'HOST': 'ec2-54-247-99-159.eu-west-1.compute.amazonaws.com',
-    'USER': 'oksxiwjzjigevj',
+    'HOST': 'ec2-54-243-253-17.compute-1.amazonaws.com',
+    'USER': 'omimtvfgghujwb',
     'PORT': '5432',
-    'PASSWORD': '2abe29ab5abd06e4f796746a1cc30aac28f8a71944f744600815f34ae43f102f',
-    'NAME': 'd3dvakfco51quf',
+    'PASSWORD': 'b3670815d713e72ce526a916f9665961f8b55d2a2e7237980dc3c12b25d3653e',
+    'NAME': 'daphoh3qdcl581',
   }
 }
 
