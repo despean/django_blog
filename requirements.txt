@@ -1,5 +1,5 @@
 appdirs==1.4.3
-Django==1.8
+Django==1.10
 django-haystack==2.4.0
 django-taggit==0.22.1
 Markdown==2.6.8
