@@ -30,45 +30,45 @@ ALLOWED_HOSTS = []
 SITE_ID = 1
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'blog',
-    'taggit',
-    'haystack',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'blog',
+  'taggit',
+  'haystack',
+  'django.contrib.sites',
+  'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.middleware.security.SecurityMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  'django.middleware.csrf.CsrfViewMiddleware',
+  'django.contrib.auth.middleware.AuthenticationMiddleware',
+  'django.contrib.messages.middleware.MessageMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'sblog.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+  {
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    'APP_DIRS': True,
+    'OPTIONS': {
+      'context_processors': [
+        'django.template.context_processors.debug',
+        'django.template.context_processors.request',
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+      ],
     },
+  },
 ]
 WSGI_APPLICATION = 'sblog.wsgi.application'
 
@@ -76,28 +76,32 @@ WSGI_APPLICATION = 'sblog.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'HOST': 'ec2-54-247-99-159.eu-west-1.compute.amazonaws.com',
+    'USER': 'oksxiwjzjigevj',
+    'PORT': '5432',
+    'PASSWORD': '2abe29ab5abd06e4f796746a1cc30aac28f8a71944f744600815f34ae43f102f',
+    'NAME': 'd3dvakfco51quf',
+  }
 }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+  {
+    'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+  },
 ]
 
 # Internationalization
@@ -123,15 +127,15 @@ EMAIL_USE_TLS = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "blog/static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "blog/static"),
+  os.path.join(BASE_DIR, "blog/static"),
 ]
 
 # search Engine Backend config
 HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-        'URL': 'http://127.0.0.1:8983/solr/blog'
-    },
+  'default': {
+    'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+    'URL': 'http://127.0.0.1:8983/solr/blog'
+  },
 }
