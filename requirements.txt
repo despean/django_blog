@@ -1,5 +1,5 @@
 appdirs==1.4.3
-Django==1.10
+Django==1.8
 django-haystack==2.4.0
 django-taggit==0.22.1
 Markdown==2.6.8
@@ -9,3 +9,4 @@ pysolr==3.3.2
 pytz==2017.2
 requests==2.13.0
 six==1.10.0
+psycopg2==2.7.1
